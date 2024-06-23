@@ -1,0 +1,11 @@
+.App{
+  text-align: center;
+}
+body {
+  background-color: #03395f;
+  color: #fff;
+}
+* {
+  box-shadow: none !important;
+}
+

@@ -1,0 +1,128 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+header, footer {
+    background-color: #E5FCE9;
+    color: Black;
+    padding: 16px;
+    text-align: center;
+}
+.container {
+    max-width: 1200px;
+    margin: 0px auto 0;
+    padding: 16px;
+    overflow-x: auto;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #D3E1D6;
+}
+tr:hover {
+    background-color: #f5f5f5;
+}
+.back-button, .register-button {
+    background-color: #D3E1D6;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.search-bar button {
+    background-color: #D3E1D6;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 8px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+}
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover {
+    color: black;
+}
+.modal-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+.modal-content label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.modal-content input {
+    width: calc(100% - 16px);
+    padding: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.modal-content button {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 16px;
+}
+.modal-content button:hover {
+    background-color: #004ba0;
+}

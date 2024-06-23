@@ -1,0 +1,100 @@
+/* Login.module.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(150deg, #174c38, #167254);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .loginContainer {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .loginBox {
+    background: #003b33;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .loginBox h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #e9e5cd;
+    text-align: center;
+  }
+  
+  .inputGroup {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .inputGroup input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #e9e5cd;
+    background: #167254;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .inputGroup label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    color: #e9e5cd;
+    font-size: 16px;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.5s ease;
+  }
+  
+  .inputGroup input:focus ~ label,
+  .inputGroup input:valid ~ label {
+    top: -5px;
+    left: 10px;
+    color: #e9e5cd;
+    font-size: 12px;
+  }
+  
+  .loginButton {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #167254;
+    color: #e9e5cd;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .loginButton:hover {
+    background: #003b33;
+    color: #167254;
+  }
+  
+  .signupText {
+    text-align: center;
+    margin-top: 20px;
+    color: #e9e5cd;
+  }
+  
+  .signupText a {
+    color: #167254;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .signupText a:hover {
+    color: #167254;
+  }
+  
