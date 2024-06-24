@@ -3,7 +3,7 @@
 }
 body {
   background-color: #03395f;
-  color: #fff;
+  color: #fff !important;
 }
 * {
   box-shadow: none !important;
