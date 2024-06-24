@@ -192,7 +192,7 @@ const LocalDoctors = () => {
               <Button
                 type="submit"
                 variant="contained"
-                fullWidth
+                
                 size="large"
                 style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10, marginTop: 10 }}
               >

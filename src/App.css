@@ -2,8 +2,8 @@
   text-align: center;
 }
 body {
-  background-color: #86B6F6;
-  color: #fff ;
+  background-color: #86B6F6 !important;
+  
 }
 * {
   box-shadow: none !important;

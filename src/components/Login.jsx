@@ -67,7 +67,7 @@ const Login = () => {
     <Container maxWidth="sm">
       <Paper className={classes.paper} elevation={3}>
         <Typography variant="h3" className={classes.title}>
-          Wellmeadows Hospital
+          Wellmeadows
         </Typography>
         <br />
         <Typography variant="h5" className={classes.subtitle}>
@@ -112,7 +112,7 @@ const Login = () => {
         <br />
         <Grid container justifyContent="center">
           <Grid item>
-            <Button component={Link} to="/signup" variant="contained" color="primary" className={classes.button}>
+            <Button component={Link} to="/signup" variant="contained" color="primary"  className={classes.button}>
               Sign Up
             </Button>
           </Grid>

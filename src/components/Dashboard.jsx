@@ -1,216 +1,236 @@
-import { Container, Paper, Typography, IconButton, Box, Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  IconButton,
+  Typography,
+  Box,
+  Button,
+  Container,
+  Paper,
+} from "@mui/material";
 import LogoutIcon from '@mui/icons-material/Logout';
+import MenuIcon from '@mui/icons-material/Menu';
 
-export default function Dashboard() {
-    return (
-        <Container>
-            <Container maxWidth="xl">
-                <Paper style={{ position: 'relative', padding: 16, marginTop: 16, backgroundColor: '#23344e', color: '#fff' }}>  
-                    <Link to='/login' style={{ position: 'absolute', top: 16, right: 16 }}>
-                        <IconButton color="primary">
-                            <LogoutIcon />
-                        </IconButton>
-                    </Link>
-                    <Typography 
-                        variant="h2" 
-                        align="center" 
-                        style={{ marginTop: 16, fontFamily: 'Georgia, serif' }}
->
-                                    WELLMEADOWS
-                    </Typography>
+const Dashboard = () => {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
 
-                    
-                    <Box my={2} p={2} boxShadow={0} style={{ backgroundColor: '#23344e', color: '#fff' }}>
-                        <Typography variant="h5" align="left">Patient Details</Typography>
-                        <Box mt={2} display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4}>
-                           
-                                <Button
-                                    component={Link}
-                                    to="/patient-form"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                >
-                                    Patient Form
-                                </Button>
-                                
-                            
-                                {/* <Button 
-                                    variant="error" 
-                                    fullWidth 
-                                    size="large" 
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}>Patient Allocation
-                                </Button> */}
-                            
-                                <Button
-                                    component={Link}
-                                    to="/patient-medication"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                    >
-                                    Patient Medication
-                                </Button>
-                            
-                            
-                                <Button
-                                    component={Link}
-                                    to="/patient-appointment"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                    >
-                                    Patient Appointment
-                                </Button>
-                        </Box>
-                    </Box>
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+  const list = () => (
+    <Box
+      sx={{ width: 250, backgroundColor: '#23344e', color: '#fff', height: '100%' }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
+    >
+      {/* <Typography
+        variant="h2"
+        align="center"
+        style={{ margin: 16, fontFamily: 'Georgia, serif' }}
+      >
+        WELLMEADOWS
+      </Typography> */}
+      <List>
+        <ListItem>
+          <ListItemText primary="Patient Details" />
+        </ListItem>
+        <ListItem button component={Link} to="/patient-form">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Patient Form
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/patient-medication">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Patient Medication
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/patient-appointment">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Patient Appointment
+          </Button>
+        </ListItem>
+        <ListItem>
+          <ListItemText primary="Staff Information" />
+        </ListItem>
+        <ListItem button component={Link} to="/staff-list">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Staff List
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/ward-requisitions">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Ward Requisitions
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/ward-staff-allocation">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Ward Staff Allocation
+          </Button>
+        </ListItem>
+        <ListItem>
+          <ListItemText primary="Drug Supply Info" />
+        </ListItem>
+        <ListItem button component={Link} to="/pharmaceutical-supplies">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Pharmaceutical Supplies
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/drug-supplies">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Drug Supplies
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/drug-supplier">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Drug Supplier
+          </Button>
+        </ListItem>
+        <ListItem>
+          <ListItemText primary="Other Menus" />
+        </ListItem>
+        <ListItem button component={Link} to="/in-patient">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            InPatient
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/outpatient">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Outpatient
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/consultant">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Consultant
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/local-doctors">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Local Doctors
+          </Button>
+        </ListItem>
+        <ListItem button component={Link} to="/patient-next-of-kin">
+          <Button
+            variant="contained"
+            fullWidth
+            size="small"
+            style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
+          >
+            Patient Next-of-Kin
+          </Button>
+        </ListItem>
+      </List>
+    </Box>
+  );
+
+  return (
+    <div>
+      <IconButton onClick={toggleDrawer(true)} style={{ position: 'absolute', top: 16, left: 16 }}>
+        <MenuIcon style={{ color: '#000' }} />
+      </IconButton>
+      <Drawer
+        anchor="left"
+        open={drawerOpen}
+        onClose={toggleDrawer(false)}
+      >
+        {list()}
+      </Drawer>
+      <Link to='/login' style={{ position: 'absolute', top: 16, right: 16 }}>
+        <IconButton>
             
-                    <Box my={2} p={2} boxShadow={0} style={{ backgroundColor: '#23344e', color: '#fff' }}>
-                        <Typography variant="h5" align="left">Staff Information</Typography>
-                        <Box mt={2} display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2}>
+          <LogoutIcon style={{ color: '#000' }} />
+        </IconButton>
+      </Link>
+      <Container maxWidth="xl" style={{ marginTop: 10 }}>
+        <Paper style={{ padding: 16, backgroundColor: '#86b6f6', color: '#fff' }}>
+          <Typography 
+            variant="h2" 
+            align="center" 
+            style={{ marginTop: 16, fontFamily: 'Georgia, serif' }}
+          >
+            WELLMEADOWS
+          </Typography>
+          <Box my={4} display="flex" justifyContent="center">
+            <img src="\src\assets\shat.jpg" alt="Wellmeadows" style={{ borderRadius: 10, maxWidth: '55%' }} />
+          </Box>
+        </Paper>
+      </Container>
+    </div>
+  );
+};
 
-                                <Button
-                                    component={Link}
-                                    to="/staff-list"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                    >
-                                    Staff List
-                                </Button>
-
-                                <Button
-                                    component={Link}
-                                    to="/ward-requisitions"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10}}
-                                >
-                                    Ward Requisitions
-                                </Button>
-
-                                <Button
-                                    component={Link}
-                                    to="/ward-staff-allocation"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                    >
-                                    Ward Staff Allocation
-                                </Button>
-                        </Box>
-                    </Box>
-
-                    <Box my={2} p={2} style={{ backgroundColor: '#23344e' }}>
-                        <Typography variant="h5" align="left">Drug Supply Info</Typography>
-                        <Box mt={2} display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2}>
-
-                                <Button
-                                    component={Link}
-                                    to="/pharmaceutical-supplies"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                    >
-                                    Pharmaceutical Supplies
-                                </Button>
-
-                                {/* <Button 
-                                    variant="contained" 
-                                    fullWidth 
-                                    size="large" 
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}>Ward
-                                </Button> */}
-
-                                <Button
-                                    component={Link}
-                                    to="/drug-supplies"
-                                    variant="contained"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: '10px 20px' }}
-                                >
-                                    Drug Supplies
-                                </Button>
-                                                     
-                                <Button
-                                    component={Link}
-                                    to="/drug-supplier"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                >
-                                    Drug Supplier
-                                </Button>
-                        </Box>
-                    </Box>
-
-
-                    <Box my={2} p={2} style={{ backgroundColor: '#23344e' }}>
-                        <Typography variant="h5" align="left">Other Menus</Typography>
-                        <Box mt={2} display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2}>
-
-                                <Button
-                                    component={Link}
-                                    to="/in-patient"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                >
-                                    InPatient
-                                </Button>
-
-                                 <Button
-                                    component={Link}
-                                    to="/outpatient"
-                                    variant="contained"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                >
-                                    Outpatient
-                                </Button>
-
-                                <Button
-                                    component={Link}
-                                    to="/consultant"
-                                    variant="contained"
-                                    fullWidth
-                                    size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                    >
-                                    Consultant
-                                </Button>
-                                
-                                <Button
-                                    component={Link}
-                                    to="/local-doctors"
-                                    variant="contained"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
-                                    >
-                                    Local Doctors
-                                </Button>
-                  
-                           
-                                <Button
-                                    component={Link}
-                                    to="/patient-next-of-kin"
-                                    variant="contained"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10}}
-                                    >
-                                    Patient Next-of-Kin
-                                </Button>
-                        </Box>
-                    </Box>
-                </Paper>
-            </Container>
-        </Container>
-    );
-}
+export default Dashboard;
+    
