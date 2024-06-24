@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     width: '100%',
     padding: theme.spacing(0), 
-    backgroundColor: '#03395f', 
+    backgroundColor: '#86B6F6', 
   },
   
   titleContainer: {

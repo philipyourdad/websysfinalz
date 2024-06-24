@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Link } from "react-router-dom";
-import supabase from "../Client";
+import supabase from "../Client"; // Assuming you have Supabase client configured
 import {
   Button,
   Container,
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function Signup() {
+const Signup = () => {
   const classes = useStyles();
   const [firstname, setFirstname] = useState('');
   const [surname, setSurname] = useState('');
@@ -73,7 +73,26 @@ export default function Signup() {
       if (error) {
         setSignupError(error.message);
       } else {
-        window.location.href = '/login';
+        // User signed up successfully, now insert into PostgreSQL table
+        const { data, error } = await supabase
+          .from('usersz')
+          .insert([
+            {
+              firstname: firstname,
+              surname: surname,
+              address: address,
+              birthday: birthday,
+              gender: gender,
+              email: email,
+            },
+          ]);
+
+        if (error) {
+          setSignupError('Error inserting user data');
+        } else {
+          console.log('User data inserted successfully:', data);
+          window.location.href = '/login'; // Redirect to login page after successful signup
+        }
       }
     } catch (error) {
       setSignupError(error.message);
@@ -254,13 +273,15 @@ export default function Signup() {
         </form>
         <br />
         <Grid container justifyContent="center">
-        <Grid item>
-        <Button component={Link} to="/login" variant="contained" color="primary" className={classes.button}>
-          Login 
-        </Button>
-      </Grid>
+          <Grid item>
+            <Button component={Link} to="/login" variant="contained" color="primary" className={classes.button}>
+              Login 
+            </Button>
+          </Grid>
         </Grid>
       </Paper>
     </Container>
   );
 }
+
+export default Signup;

@@ -13,11 +13,18 @@ export default function Dashboard() {
                             <LogoutIcon />
                         </IconButton>
                     </Link>
-                    <Typography variant="h2" align="center" style={{ marginTop: 16 }}>Wellmeadows Hospital</Typography>
+                    <Typography 
+                        variant="h2" 
+                        align="center" 
+                        style={{ marginTop: 16, fontFamily: 'Georgia, serif' }}
+>
+                                    WELLMEADOWS
+                    </Typography>
+
                     
                     <Box my={2} p={2} boxShadow={0} style={{ backgroundColor: '#23344e', color: '#fff' }}>
                         <Typography variant="h5" align="left">Patient Details</Typography>
-                        <Box mt={2} display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={4}>
+                        <Box mt={2} display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={4}>
                            
                                 <Button
                                     component={Link}
@@ -27,7 +34,7 @@ export default function Dashboard() {
                                     size="large"
                                     style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
                                 >
-                                    Patient Lists
+                                    Patient Form
                                 </Button>
                                 
                             
@@ -65,7 +72,7 @@ export default function Dashboard() {
             
                     <Box my={2} p={2} boxShadow={0} style={{ backgroundColor: '#23344e', color: '#fff' }}>
                         <Typography variant="h5" align="left">Staff Information</Typography>
-                        <Box mt={2} display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={2}>
+                        <Box mt={2} display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2}>
 
                                 <Button
                                     component={Link}
@@ -84,7 +91,7 @@ export default function Dashboard() {
                                     variant="contained"
                                     fullWidth
                                     size="large"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10, marginBottom: 10 }}
+                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10}}
                                 >
                                     Ward Requisitions
                                 </Button>
@@ -104,7 +111,7 @@ export default function Dashboard() {
 
                     <Box my={2} p={2} style={{ backgroundColor: '#23344e' }}>
                         <Typography variant="h5" align="left">Drug Supply Info</Typography>
-                        <Box mt={2} display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={2}>
+                        <Box mt={2} display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2}>
 
                                 <Button
                                     component={Link}
@@ -149,7 +156,7 @@ export default function Dashboard() {
 
                     <Box my={2} p={2} style={{ backgroundColor: '#23344e' }}>
                         <Typography variant="h5" align="left">Other Menus</Typography>
-                        <Box mt={2} display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={2}>
+                        <Box mt={2} display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2}>
 
                                 <Button
                                     component={Link}
@@ -166,7 +173,7 @@ export default function Dashboard() {
                                     component={Link}
                                     to="/outpatient"
                                     variant="contained"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: '10px 20px', margin: '0 10px' }}
+                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
                                 >
                                     Outpatient
                                 </Button>
@@ -186,7 +193,7 @@ export default function Dashboard() {
                                     component={Link}
                                     to="/local-doctors"
                                     variant="contained"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: '10px 20px' }}
+                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10 }}
                                     >
                                     Local Doctors
                                 </Button>
@@ -196,7 +203,7 @@ export default function Dashboard() {
                                     component={Link}
                                     to="/patient-next-of-kin"
                                     variant="contained"
-                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: '10px 20px', margin: '0 10px' }}
+                                    style={{ backgroundColor: '#027184', color: '#fff', borderRadius: 10, padding: 10}}
                                     >
                                     Patient Next-of-Kin
                                 </Button>

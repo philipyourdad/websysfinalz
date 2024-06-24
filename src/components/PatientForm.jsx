@@ -138,7 +138,12 @@ const PatientForm = () => {
         </Grid>
       </Grid>
     </Box>
+
+    
+    
   );
 };
+
+
 
 export default PatientForm;
